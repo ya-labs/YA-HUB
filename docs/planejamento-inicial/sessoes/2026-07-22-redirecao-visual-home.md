@@ -448,6 +448,19 @@ Estrutura, documentação, automação e técnica continuam essenciais, mas ocup
 
 Essa decisão orienta o futuro elemento de continuidade: ele precisa sugerir transformação, passagem, propagação ou evolução — não apenas conexão estática entre blocos. Também reforça o Fluxo como uma prova central da narrativa, e não como uma grade secundária de etapas.
 
+### Linguagem visual confirmada: estrutura técnica e matéria viva
+
+A direção escolhida combina duas camadas com funções diferentes:
+
+- **estrutura técnica e precisa:** tipografia, espaçamento, recortes, grid discreto, trajetórias, hierarquia e informação editada dão clareza, rigor e confiança à experiência;
+- **matéria viva e autoral:** textura, luz localizada, revelação da marca e transformações pontuais representam a ideia em movimento e impedem que a Home pareça uma interface fria.
+
+Essa combinação não deve ser lida como mistura aleatória de efeitos técnicos e orgânicos. A estrutura é o sistema que conduz; a matéria é o que se transforma dentro dele. Assim, a Home comunica um laboratório criativo que trabalha com método: ideias ganham corpo, percorrem um processo e chegam a resultados concretos.
+
+### Critério de uso
+
+Todo elemento futuro deve justificar a qual camada pertence. Grades, linhas, rótulos e trajetórias só entram se aumentarem clareza, direção ou rastreabilidade. Texturas, brilho, profundidade e transformação só entram se evidenciarem passagem, energia ou evolução da ideia. Nenhuma das duas camadas deve ser usada apenas como ornamentação.
+
 ## Impacto esperado
 
 A Home deve deixar de parecer uma sequência de blocos visualmente bons, porém independentes. O objetivo é uma experiência institucional coesa, criativa e clara, em que a YA LABS seja percebida como uma organização técnica viva, confiável e memorável.
