@@ -440,6 +440,14 @@ Essa direção estabelece uma tensão que a composição precisa sustentar:
 
 Em termos de linguagem visual, o princípio é **criatividade com rigor**. A página deve permitir gestos autorais, matéria e transformação, mas cada um precisa obedecer a uma estrutura clara, tipografia precisa, informação bem editada e acabamento consistente.
 
+### Ideia que lidera a narrativa
+
+A YA LABS é, antes de tudo, um laboratório que **transforma e coloca ideias em movimento**. Uma ideia ganha intenção, é estruturada, construída, compartilhada e se torna algo real. Essa passagem é mais representativa da organização do que a noção de apenas desvendar ou organizar complexidade.
+
+Estrutura, documentação, automação e técnica continuam essenciais, mas ocupam o papel de meios que tornam o movimento confiável. A Home não deve comunicar somente que a YA LABS sabe organizar sistemas; ela deve comunicar que a organização faz ideias saírem do estado potencial e chegarem a impacto concreto.
+
+Essa decisão orienta o futuro elemento de continuidade: ele precisa sugerir transformação, passagem, propagação ou evolução — não apenas conexão estática entre blocos. Também reforça o Fluxo como uma prova central da narrativa, e não como uma grade secundária de etapas.
+
 ## Impacto esperado
 
 A Home deve deixar de parecer uma sequência de blocos visualmente bons, porém independentes. O objetivo é uma experiência institucional coesa, criativa e clara, em que a YA LABS seja percebida como uma organização técnica viva, confiável e memorável.
