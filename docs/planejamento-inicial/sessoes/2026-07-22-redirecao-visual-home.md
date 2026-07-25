@@ -461,6 +461,14 @@ Essa combinação não deve ser lida como mistura aleatória de efeitos técnico
 
 Todo elemento futuro deve justificar a qual camada pertence. Grades, linhas, rótulos e trajetórias só entram se aumentarem clareza, direção ou rastreabilidade. Texturas, brilho, profundidade e transformação só entram se evidenciarem passagem, energia ou evolução da ideia. Nenhuma das duas camadas deve ser usada apenas como ornamentação.
 
+### Matéria predominante: mineral escura, em uso pontual
+
+A textura mineral ou de rocha escura é a matéria visual que mais combina com a direção da YA LABS. Ela comunica profundidade, algo em formação e uma presença menos genérica que efeitos digitais abstratos. Porém, ela não deve preencher a Home nem funcionar como fundo permanente.
+
+A elegância da página continua sustentada por superfícies sólidas, sobretudo navy profundo, off-white em cenas justificadas e neutros escuros. A matéria mineral entra pontualmente como conteúdo e não como wallpaper: em uma área de transformação da hero, em uma revelação de marca, em um artefato de produto ou na assinatura monumental do footer. Ela deve ter território, escala e função próprios.
+
+Gradientes decorativos e textura aplicada sobre todas as seções devem ser evitados. Profundidade virá de contraste, recorte, transparência controlada, luz localizada e do contraste entre superfícies limpas e matéria visual. Quanto mais seletivo for o uso da rocha, mais significativa será sua presença.
+
 ## Impacto esperado
 
 A Home deve deixar de parecer uma sequência de blocos visualmente bons, porém independentes. O objetivo é uma experiência institucional coesa, criativa e clara, em que a YA LABS seja percebida como uma organização técnica viva, confiável e memorável.
