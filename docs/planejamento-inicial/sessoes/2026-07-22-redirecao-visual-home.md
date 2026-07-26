@@ -487,6 +487,22 @@ Ela não deve ser uma linha vertical contínua, um trilho literal, uma órbita r
 
 O traçado precisa ser técnico pela precisão e pela relação com conteúdo, não por excesso de linhas, pontos ou sinais de interface. Se não reforçar uma decisão, sequência, conexão ou resultado, ele não deve aparecer.
 
+### Intensidade: presença quase oculta
+
+A trajetória deve ser percebida antes de ser lida. Na maior parte da Home, ela aparece com baixo contraste, em fragmentos, atravessando bordas ou sugerindo direção por pequenos deslocamentos de composição. Não deve se apresentar como um diagrama persistente nem exigir atenção concorrente com títulos e conteúdo.
+
+Ela ganha definição apenas quando a narrativa pede leitura de passagem: no encontro entre capítulos, na ramificação do Ecossistema, na progressão do Fluxo e na convergência para o YAHub. O Fluxo é o momento em que a trajetória pode ficar mais visível, porque ali a sequência é a própria mensagem; após cumprir essa função, ela volta a se dissolver na composição.
+
+O efeito desejado é de uma pessoa perceber, ao final, que a página sempre teve direção — sem se sentir guiada por um trilho literal ou por elementos técnicos em excesso.
+
+### Superfícies: navy dominante e viradas claras pontuais
+
+O navy profundo permanece como a superfície dominante da Home e mantém a continuidade institucional da YA LABS. Viradas off-white ou claras são permitidas, mas devem ser raras e narrativas: entram para criar respiro, máxima legibilidade ou sensação de nova fase, não para alternar o fundo de cada seção.
+
+Uma virada clara precisa ser tratada como mudança de estado. Ela pode interromper temporariamente a matéria escura para apresentar uma ideia que pede leitura direta, revelar uma síntese ou preparar um novo capítulo. Ao retornar ao navy, a transição deve parecer consequência da narrativa e não troca arbitrária de tema.
+
+O off-white preserva a mesma disciplina de tipografia, espaços, linhas e dourado de foco. Não introduz uma segunda identidade visual nem substitui a matéria mineral; é uma superfície limpa que torna o contraste da Home mais expressivo.
+
 ## Impacto esperado
 
 A Home deve deixar de parecer uma sequência de blocos visualmente bons, porém independentes. O objetivo é uma experiência institucional coesa, criativa e clara, em que a YA LABS seja percebida como uma organização técnica viva, confiável e memorável.
