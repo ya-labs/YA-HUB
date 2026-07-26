@@ -503,6 +503,12 @@ Uma virada clara precisa ser tratada como mudança de estado. Ela pode interromp
 
 O off-white preserva a mesma disciplina de tipografia, espaços, linhas e dourado de foco. Não introduz uma segunda identidade visual nem substitui a matéria mineral; é uma superfície limpa que torna o contraste da Home mais expressivo.
 
+### Primeira virada clara: Sobre a YA LABS
+
+A seção Sobre será a primeira cena clara depois da hero. A passagem faz parte da narrativa: depois de apresentar a marca como presença, matéria e movimento, a Home desacelera para explicar com objetividade o que é a YA LABS e como ela trabalha.
+
+Essa cena não deve repetir a hero em outra cor nem carregar todos os princípios, slogans e cards atuais. O off-white cria uma pausa de leitura honesta, com uma ideia institucional central e conteúdo de apoio estritamente necessário. Em seguida, a Home pode retornar ao navy para iniciar a descoberta do Ecossistema YA.
+
 ## Impacto esperado
 
 A Home deve deixar de parecer uma sequência de blocos visualmente bons, porém independentes. O objetivo é uma experiência institucional coesa, criativa e clara, em que a YA LABS seja percebida como uma organização técnica viva, confiável e memorável.
