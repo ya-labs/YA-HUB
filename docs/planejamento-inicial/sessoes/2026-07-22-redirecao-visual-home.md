@@ -469,6 +469,24 @@ A elegância da página continua sustentada por superfícies sólidas, sobretudo
 
 Gradientes decorativos e textura aplicada sobre todas as seções devem ser evitados. Profundidade virá de contraste, recorte, transparência controlada, luz localizada e do contraste entre superfícies limpas e matéria visual. Quanto mais seletivo for o uso da rocha, mais significativa será sua presença.
 
+### Elemento de continuidade: trajetória técnica discreta
+
+A trajetória técnica discreta é o elemento escolhido para orientar a Home. Ela representa a ideia que entra em movimento, percorre decisões e etapas, ganha forma e chega a um resultado concreto. A trajetória conduz a narrativa; a matéria mineral mostra os momentos em que esse movimento encontra corpo, profundidade ou impacto.
+
+Ela não deve ser uma linha vertical contínua, um trilho literal, uma órbita repetida ou um enfeite sobre cada seção. Sua presença pode surgir, desaparecer, mudar de direção, atravessar um recorte ou se dividir conforme o capítulo. O importante é que cada aparição indique uma passagem real na narrativa.
+
+### Função por capítulo
+
+- **Hero:** a trajetória começa de modo quase imperceptível, criando direção para a marca e a matéria visual sem disputar a primeira dobra.
+- **Sobre:** ela pode se tornar mais legível quando a intenção do laboratório é apresentada.
+- **Ecossistema:** ramifica ou conecta ferramentas, deixando claro que cada uma participa de um sistema maior.
+- **Fluxo:** assume seu papel mais explícito, tornando a passagem entre etapas visível e rastreável.
+- **Produtos:** alcança resultados diferentes, preservando a cor e a identidade particular de cada produto.
+- **YAHub:** converge para a central de acesso, onde projetos, pessoas, documentos e atividade podem ser explorados.
+- **Footer:** deixa de conduzir conteúdo e se resolve na assinatura monumental da marca.
+
+O traçado precisa ser técnico pela precisão e pela relação com conteúdo, não por excesso de linhas, pontos ou sinais de interface. Se não reforçar uma decisão, sequência, conexão ou resultado, ele não deve aparecer.
+
 ## Impacto esperado
 
 A Home deve deixar de parecer uma sequência de blocos visualmente bons, porém independentes. O objetivo é uma experiência institucional coesa, criativa e clara, em que a YA LABS seja percebida como uma organização técnica viva, confiável e memorável.
