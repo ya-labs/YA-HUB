@@ -590,6 +590,22 @@ Como a narrativa deve continuar seletiva, a presença de todos os itens não aut
 - **Vínculos:** GitHub, contato, Discord e redes, além das informações funcionais necessárias.
 - **Função narrativa:** encerrar com presença de marca sem criar um novo bloco de conteúdo.
 
+### Sequência narrativa validada
+
+A sequência abaixo foi validada como estrutura da experiência. Ela orientará o wireframe, mas ainda não define posições, proporções ou acabamento final de cada cena:
+
+```text
+Hero escura
+→ Sobre claro
+→ Ecossistema escuro e navegável
+→ Fluxo escuro e progressivo
+→ Produtos com navegação explícita
+→ YAHub como síntese e acesso
+→ Footer como assinatura monumental
+```
+
+O próximo artefato deve transformar essa ordem em um wireframe narrativo desktop e mobile, testando altura, transições, pontos sticky e distribuição de conteúdo antes de qualquer composição de alta fidelidade.
+
 ## Impacto esperado
 
 A Home deve deixar de parecer uma sequência de blocos visualmente bons, porém independentes. O objetivo é uma experiência institucional coesa, criativa e clara, em que a YA LABS seja percebida como uma organização técnica viva, confiável e memorável.
