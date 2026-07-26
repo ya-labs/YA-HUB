@@ -533,6 +533,63 @@ O sistema visual definido para a nova Home é:
 
 Esse sistema passa a ser o critério para a etapa seguinte. As composições de Sobre, Ecossistema, Fluxo, Produtos e YAHub podem ser diferentes, mas cada uma precisa reforçar pelo menos uma dessas decisões sem contradizer as demais.
 
+## Definições da etapa 2 — papel dos capítulos
+
+### Regra de conteúdo
+
+A Home deve ser curta e seletiva. Ela apresenta a organização, desperta curiosidade e oferece caminhos para aprofundamento no YAHub, onde documentação e informações completas podem ser encontradas. Não há conteúdo atual obrigatório que precise ser preservado por inércia. O idioma principal continua sendo português, com `Code. Automate. Scale.` como assinatura em inglês.
+
+O Ecossistema deve ser o capítulo mais memorável depois da hero, porque a identidade atual da YA LABS está diretamente ligada a uma organização que desenvolve software da melhor forma possível. Todos os quatro capítulos densos — Ecossistema, Fluxo, Produtos e YAHub — podem usar estados sticky quando o protótipo provar que isso melhora a leitura.
+
+Como a narrativa deve continuar seletiva, a presença de todos os itens não autoriza uma sequência vertical longa: Ecossistema e Produtos precisam concentrar seus estados em uma única cena navegável, em vez de multiplicar subseções de mesma hierarquia.
+
+### Sobre — clareza institucional
+
+- **Frase principal:** `Construímos como laboratório.` permanece como ponto de partida.
+- **Entendimento esperado:** a YA LABS é uma organização que produz softwares de diversas áreas com alta qualidade, atenção à experiência do usuário, performance e execução.
+- **Ideias indispensáveis:** software, automação, produtos, documentação e experimentação.
+- **Composição desejada:** primeira virada off-white, apenas texto e composição tipográfica agradável; sem lista explícita de princípios, cards ou ilustração competindo com a leitura.
+- **Função narrativa:** explicar a organização de maneira honesta e rápida antes da descoberta das ferramentas.
+
+### Ecossistema YA — capítulo protagonista
+
+- **Ferramentas:** YABook, YAGit, YABot e YAHub.
+- **Papel:** ferramentas internas que sustentam o modo de trabalho da organização; o YABot é o bot principal da YA LABS, com Discord como uma de suas vertentes.
+- **YAHub:** aparece como a central que reúne as demais ferramentas, não como apenas mais um item equivalente.
+- **Interação:** o scroll pode avançar os estados, mas a pessoa mantém seleção explícita de ferramenta e controle para retornar ou explorar outra.
+- **Evidência:** cada estado terá artefato real associado; não serão criadas interfaces fictícias apenas para preencher a cena.
+- **Função narrativa:** mostrar a infraestrutura de trabalho que torna o laboratório capaz de transformar ideias em entregas.
+
+### Fluxo — prova de execução
+
+- **Sequência oficial:** `Ideia → Documentação → Issue → Branch → Pull Request → Release`.
+- **Destaque:** a `Issue` é a etapa mais representativa, porque concentra a tarefa que orienta o desenvolvimento e sustenta o fluxo.
+- **Densidade:** a Home comunica a trajetória e seu significado; os detalhes ficam no YAHub e no YABook.
+- **Interação:** pode ser o capítulo sticky mais intenso, revelando uma etapa por avanço de scroll e usando a trajetória técnica como elemento mais legível.
+- **Função narrativa:** provar que uma ideia não é apenas inspirada; ela é estruturada, rastreada, construída e liberada.
+
+### Produtos — diversidade sob navegação explícita
+
+- **Lista inicial:** SVNFlow, DevLab, Spotifolio, Cade-o-Dano, RMAWorker e Meu Treino.
+- **Presença:** todos os produtos devem aparecer na Home e possuem cor, logo, imagem ou outro artefato real para sustentar a apresentação.
+- **Hierarquia:** não existe uma ordem de importância pré-definida.
+- **Interação:** navegação explícita por produto; não usar troca automática nem galeria dependente apenas do scroll horizontal.
+- **Composição esperada:** um produto em foco por vez, com identidade e artefato próprios, dentro de uma cena única que permita alcançar todos sem transformar a página em seis capítulos verticais.
+- **Função narrativa:** demonstrar a variedade concreta de resultados que o laboratório produz.
+
+### YAHub — desfecho e acesso
+
+- **Promessa:** `Um lugar para encontrar o que a YA LABS está construindo e como.`
+- **Preview:** janela fiel da interface real do YAHub, com projetos, pessoas, documentação, atividade e Ecossistema como dimensões visíveis.
+- **CTA:** somente `acessar o portal`.
+- **Função narrativa:** concluir a história reunindo tudo o que a pessoa acabou de conhecer em uma central explorável.
+
+### Footer — assinatura e vínculos mínimos
+
+- **Assinatura:** marca monumental `YA / LABS`, sem frase institucional adicional.
+- **Vínculos:** GitHub, contato, Discord e redes, além das informações funcionais necessárias.
+- **Função narrativa:** encerrar com presença de marca sem criar um novo bloco de conteúdo.
+
 ## Impacto esperado
 
 A Home deve deixar de parecer uma sequência de blocos visualmente bons, porém independentes. O objetivo é uma experiência institucional coesa, criativa e clara, em que a YA LABS seja percebida como uma organização técnica viva, confiável e memorável.
