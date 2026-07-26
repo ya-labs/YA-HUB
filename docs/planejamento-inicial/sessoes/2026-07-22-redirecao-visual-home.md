@@ -509,6 +509,30 @@ A seção Sobre será a primeira cena clara depois da hero. A passagem faz parte
 
 Essa cena não deve repetir a hero em outra cor nem carregar todos os princípios, slogans e cards atuais. O off-white cria uma pausa de leitura honesta, com uma ideia institucional central e conteúdo de apoio estritamente necessário. Em seguida, a Home pode retornar ao navy para iniciar a descoberta do Ecossistema YA.
 
+### Ritmo de movimento: lento, preciso, reativo e contemplativo
+
+O movimento da Home deve acontecer principalmente como resposta ao avanço da pessoa no scroll. Em vez de elementos pulsando, orbitando ou chamando atenção de forma autônoma, cada transformação acompanha uma chegada, uma passagem ou uma mudança de entendimento.
+
+O ritmo é lento e contemplativo: há tempo para perceber a matéria mineral, a trajetória quase oculta, as mudanças de superfície e a marca em transformação. Isso não significa alongar cenas sem conteúdo. As sequências precisam ser precisas, ter poucos estados e terminar assim que sua ideia estiver clara.
+
+O tratamento cinematográfico vem de enquadramento, respiro, profundidade, recorte, luz localizada e transições graduais — não de efeitos agressivos, aceleração constante ou vídeo decorativo. Em `prefers-reduced-motion`, todos os estados devem continuar claros em sequência estática ou por mudanças discretas de opacidade e posição.
+
+## Síntese da etapa 1 — sistema visual transversal
+
+O sistema visual definido para a nova Home é:
+
+- **narrativa central:** a YA LABS transforma e coloca ideias em movimento até virarem algo real;
+- **postura:** criatividade com rigor — inovadora e autoral, mas séria, técnica e precisa;
+- **camadas:** estrutura técnica para conduzir e matéria viva para representar transformação;
+- **matéria predominante:** mineral escura, usada pontualmente e nunca como wallpaper permanente;
+- **continuidade:** trajetória técnica quase oculta, que ganha definição apenas em passagens narrativas relevantes;
+- **superfícies:** navy profundo dominante, com viradas off-white raras e justificadas;
+- **primeira virada clara:** Sobre a YA LABS, para leitura institucional direta;
+- **ritmo:** lento, preciso, reativo ao scroll e contemplativo;
+- **marca:** presença forte na abertura, participação pontual nas transições e assinatura monumental no footer.
+
+Esse sistema passa a ser o critério para a etapa seguinte. As composições de Sobre, Ecossistema, Fluxo, Produtos e YAHub podem ser diferentes, mas cada uma precisa reforçar pelo menos uma dessas decisões sem contradizer as demais.
+
 ## Impacto esperado
 
 A Home deve deixar de parecer uma sequência de blocos visualmente bons, porém independentes. O objetivo é uma experiência institucional coesa, criativa e clara, em que a YA LABS seja percebida como uma organização técnica viva, confiável e memorável.
