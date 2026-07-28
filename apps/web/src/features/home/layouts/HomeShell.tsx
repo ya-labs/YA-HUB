@@ -67,7 +67,9 @@ export function HomeShell({ children }: HomeShellProps) {
             </a>
 
             <header className="home-header" data-scrolled={isScrolled ? 'true' : 'false'}>
-                <span className="home-header__spacer" aria-hidden="true" />
+                <a className="home-header__brand" href="#home" aria-label="Voltar ao início da Home">
+                    YA LABS
+                </a>
 
                 <nav className="home-nav" aria-label="Navegação da Home">
                     <a
@@ -128,8 +130,21 @@ export function HomeShell({ children }: HomeShellProps) {
             </main>
 
             <footer className="home-footer">
-                <strong>YA LABS</strong>
-                <small>Code. Automate. Scale.</small>
+                <div className="home-footer__signature" aria-label="YA LABS">
+                    <span>YA</span>
+                    <span>LABS</span>
+                </div>
+
+                <span className="home-footer__mark" aria-hidden="true" />
+
+                <div className="home-footer__links">
+                    <a href="https://github.com/ya-labs" target="_blank" rel="noreferrer">
+                        GitHub
+                    </a>
+                    <span title="Destino ainda será definido">contato</span>
+                    <span title="Destino ainda será definido">Discord</span>
+                    <span title="Destino ainda será definido">redes</span>
+                </div>
             </footer>
         </div>
     );

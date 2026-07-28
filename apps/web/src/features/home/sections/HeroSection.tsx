@@ -1,75 +1,46 @@
-import type { PointerEvent as ReactPointerEvent } from 'react';
-
-import yaLabsLogo from '../../../assets/marca-horizontal-fina.svg';
-
 export function HeroSection() {
-    const updatePointerPosition = (event: ReactPointerEvent<HTMLElement>) => {
-        if (event.pointerType === 'touch' || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-            return;
-        }
-
-        const bounds = event.currentTarget.getBoundingClientRect();
-        const x = (event.clientX - bounds.left) / bounds.width;
-        const y = (event.clientY - bounds.top) / bounds.height;
-
-        event.currentTarget.style.setProperty('--hero-shift-x', `${((x - 0.5) * -14).toFixed(2)}px`);
-        event.currentTarget.style.setProperty('--hero-shift-y', `${((y - 0.5) * -10).toFixed(2)}px`);
-        event.currentTarget.style.setProperty('--hero-orbit-x', `${((x - 0.5) * 8).toFixed(2)}px`);
-        event.currentTarget.style.setProperty('--hero-orbit-y', `${((y - 0.5) * 6).toFixed(2)}px`);
-        event.currentTarget.style.setProperty('--hero-content-x', `${((x - 0.5) * 5).toFixed(2)}px`);
-        event.currentTarget.style.setProperty('--hero-content-y', `${((y - 0.5) * 3).toFixed(2)}px`);
-    };
-
-    const resetPointerPosition = (event: ReactPointerEvent<HTMLElement>) => {
-        event.currentTarget.style.setProperty('--hero-shift-x', '0px');
-        event.currentTarget.style.setProperty('--hero-shift-y', '0px');
-        event.currentTarget.style.setProperty('--hero-orbit-x', '0px');
-        event.currentTarget.style.setProperty('--hero-orbit-y', '0px');
-        event.currentTarget.style.setProperty('--hero-content-x', '0px');
-        event.currentTarget.style.setProperty('--hero-content-y', '0px');
-    };
-
     return (
-        <section
-            className="home-hero"
-            id="home"
-            aria-labelledby="home-title"
-            onPointerMove={updatePointerPosition}
-            onPointerLeave={resetPointerPosition}
-        >
-            <div className="home-hero__scene" aria-hidden="true">
-                <span className="home-hero__material" />
-                <span className="home-hero__grid" />
-                <div className="home-hero__orbit-field">
-                    <span className="home-hero__orbit home-hero__orbit--one" />
-                    <span className="home-hero__orbit home-hero__orbit--two" />
-                    <span className="home-hero__orbit home-hero__orbit--three" />
-                    <span className="home-hero__orbit home-hero__orbit--four" />
-                    <span className="home-hero__orbit home-hero__orbit--five" />
-                    <span className="home-hero__marker home-hero__marker--one" />
-                    <span className="home-hero__marker home-hero__marker--two" />
-                    <span className="home-hero__marker home-hero__marker--three" />
-                    <span className="home-hero__marker home-hero__marker--four" />
-                    <span className="home-hero__marker home-hero__marker--five" />
-                    <span className="home-hero__marker home-hero__marker--six" />
+        <section className="home-hero" id="home" aria-labelledby="home-title">
+            <div className="home-hero__viewport">
+                <div className="home-hero__content">
+                    <p className="home-wire-label">wireframe estrutural · direção em validação</p>
+
+                    <h1 className="home-hero__title" id="home-title" aria-label="YA LABS">
+                        <span aria-hidden="true">YA</span>
+                        <span aria-hidden="true">LABS</span>
+                    </h1>
+
+                    <p className="home-hero__slogan">
+                        Code. Automate. <strong>Scale.</strong>
+                    </p>
+                </div>
+
+                <div
+                    className="home-hero__visual-territory"
+                    role="img"
+                    aria-label="Território reservado para a matéria visual e a trajetória técnica da marca"
+                >
+                    <span className="home-hero__trajectory home-hero__trajectory--outer" aria-hidden="true" />
+                    <span className="home-hero__trajectory home-hero__trajectory--inner" aria-hidden="true" />
+                    <span className="home-hero__visual-note">[ matéria visual da marca ]</span>
+                    <span className="home-hero__visual-caption">trajetória técnica discreta</span>
+                </div>
+
+                <a className="home-hero__scroll" href="#organizacao">
+                    <span>continuar</span>
+                    <span aria-hidden="true">↓</span>
+                </a>
+            </div>
+
+            <div className="home-hero__continuation" aria-label="Continuação estrutural da Hero">
+                <span className="home-hero__monogram" aria-hidden="true">
+                    A
+                </span>
+                <div>
+                    <p>transformação da marca</p>
+                    <span>[ passagem visual para o laboratório ]</span>
                 </div>
             </div>
-
-            <div className="home-hero__content">
-                <h1 className="home-hero__title" id="home-title">
-                    <img src={yaLabsLogo} alt="YA LABS" />
-                </h1>
-                <p className="home-hero__slogan">
-                    <span>
-                        Code. Automate. <strong>Scale.</strong>
-                    </span>
-                </p>
-            </div>
-
-            <a className="home-hero__scroll" href="#organizacao" aria-label="Ir para a seção sobre a organização">
-                <span>scroll</span>
-                <span aria-hidden="true">↓</span>
-            </a>
         </section>
     );
 }

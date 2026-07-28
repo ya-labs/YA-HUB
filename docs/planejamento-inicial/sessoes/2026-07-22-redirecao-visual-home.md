@@ -558,6 +558,7 @@ Como a narrativa deve continuar seletiva, a presença de todos os itens não aut
 - **YAHub:** aparece como a central que reúne as demais ferramentas, não como apenas mais um item equivalente.
 - **Interação:** o scroll pode avançar os estados, mas a pessoa mantém seleção explícita de ferramenta e controle para retornar ou explorar outra.
 - **Evidência:** cada estado terá artefato real associado; não serão criadas interfaces fictícias apenas para preencher a cena.
+- **Caminho para o YAHub:** a cena oferece uma CTA contextualizada para continuar a exploração no portal, vinculada à ferramenta ou ao Ecossistema em foco. Ela não precisa repetir o rótulo genérico `acessar o portal`.
 - **Função narrativa:** mostrar a infraestrutura de trabalho que torna o laboratório capaz de transformar ideias em entregas.
 
 ### Fluxo — prova de execução
@@ -575,6 +576,7 @@ Como a narrativa deve continuar seletiva, a presença de todos os itens não aut
 - **Hierarquia:** não existe uma ordem de importância pré-definida.
 - **Interação:** navegação explícita por produto; não usar troca automática nem galeria dependente apenas do scroll horizontal.
 - **Composição esperada:** um produto em foco por vez, com identidade e artefato próprios, dentro de uma cena única que permita alcançar todos sem transformar a página em seis capítulos verticais.
+- **Caminho para o YAHub:** cada produto em foco oferece continuidade para sua área no portal. `acompanhar desenvolvimento` é um rótulo inicial adequado quando o destino destaca evolução, atividade, documentação ou próximos passos do produto.
 - **Função narrativa:** demonstrar a variedade concreta de resultados que o laboratório produz.
 
 ### YAHub — desfecho e acesso
