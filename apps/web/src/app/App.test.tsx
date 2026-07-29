@@ -39,7 +39,7 @@ describe('App', () => {
         expect(screen.getByRole('link', { name: 'Produtos' })).toHaveAttribute('href', '#produtos');
         expect(screen.getByRole('list', { name: /áreas de atuação/i })).toBeInTheDocument();
         expect(screen.getByRole('tablist', { name: /módulos do ecossistema ya/i })).toBeInTheDocument();
-        expect(screen.getByRole('tablist', { name: /produtos da ya labs/i })).toBeInTheDocument();
+        expect(screen.getByRole('region', { name: 'SVNFlow' })).toBeInTheDocument();
 
         const user = userEvent.setup();
         const yagitTab = screen.getByRole('tab', { name: 'YAGit' });
@@ -48,10 +48,12 @@ describe('App', () => {
         expect(screen.getByRole('heading', { name: 'YAGit' })).toBeInTheDocument();
         expect(screen.getByRole('link', { name: /acompanhar no yahub/i })).toHaveAttribute('href', '#yahub');
 
-        const devLabTrigger = screen.getByRole('tab', { name: /devlab/i });
-        await user.click(devLabTrigger);
-        expect(devLabTrigger).toHaveAttribute('aria-selected', 'true');
+        await user.click(screen.getByRole('button', { name: 'Ver próxima ferramenta: YABot' }));
+        expect(screen.getByRole('heading', { name: 'YABot' })).toBeInTheDocument();
+
+        await user.click(screen.getByRole('button', { name: 'Ver próximo produto: DevLab' }));
         expect(screen.getByRole('heading', { name: 'DevLab' })).toBeInTheDocument();
+        expect(screen.getByRole('region', { name: 'DevLab' })).toBeInTheDocument();
         expect(screen.getByRole('link', { name: /acompanhar desenvolvimento/i })).toHaveAttribute(
             'href',
             '#yahub',

@@ -45,6 +45,20 @@ export function EcosystemSection() {
     const [activeModuleId, setActiveModuleId] = useState<EcosystemModuleId>('yabook');
     const tabRefs = useRef<Array<HTMLButtonElement | null>>([]);
     const activeModule = ecosystemModules.find((module) => module.id === activeModuleId) ?? ecosystemModules[0];
+    const activeModuleIndex = ecosystemModules.indexOf(activeModule);
+    const previousModule = ecosystemModules[(activeModuleIndex - 1 + ecosystemModules.length) % ecosystemModules.length];
+    const nextModule = ecosystemModules[(activeModuleIndex + 1) % ecosystemModules.length];
+
+    const selectModuleAt = (index: number, shouldFocus = false) => {
+        const normalizedIndex = (index + ecosystemModules.length) % ecosystemModules.length;
+        const nextModule = ecosystemModules[normalizedIndex];
+
+        setActiveModuleId(nextModule.id);
+
+        if (shouldFocus) {
+            tabRefs.current[normalizedIndex]?.focus();
+        }
+    };
 
     const handleTabKeyDown = (event: KeyboardEvent<HTMLButtonElement>, currentIndex: number) => {
         let nextIndex: number;
@@ -62,9 +76,7 @@ export function EcosystemSection() {
         }
 
         event.preventDefault();
-        const nextModule = ecosystemModules[nextIndex];
-        setActiveModuleId(nextModule.id);
-        tabRefs.current[nextIndex]?.focus();
+        selectModuleAt(nextIndex, true);
     };
 
     return (
@@ -111,6 +123,25 @@ export function EcosystemSection() {
                     role="tabpanel"
                     tabIndex={0}
                 >
+                    <div className="home-ecosystem__stage-controls" role="group" aria-label="Navegação entre ferramentas">
+                        <button
+                            aria-label={`Ver ferramenta anterior: ${previousModule.name}`}
+                            className="home-stage-control home-stage-control--previous"
+                            onClick={() => selectModuleAt(activeModuleIndex - 1)}
+                            type="button"
+                        >
+                            <span aria-hidden="true">←</span>
+                        </button>
+                        <button
+                            aria-label={`Ver próxima ferramenta: ${nextModule.name}`}
+                            className="home-stage-control home-stage-control--next"
+                            onClick={() => selectModuleAt(activeModuleIndex + 1)}
+                            type="button"
+                        >
+                            <span aria-hidden="true">→</span>
+                        </button>
+                    </div>
+
                     <div className="home-ecosystem__title">
                         <span>{activeModule.role}</span>
                         <h3>{activeModule.name}</h3>

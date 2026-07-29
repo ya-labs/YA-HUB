@@ -1,4 +1,4 @@
-import { useRef, useState, type KeyboardEvent } from 'react';
+import { useState } from 'react';
 
 const products = [
     {
@@ -49,28 +49,14 @@ type ProductId = (typeof products)[number]['id'];
 
 export function ProductsSection() {
     const [activeProductId, setActiveProductId] = useState<ProductId>('svnflow');
-    const tabRefs = useRef<Array<HTMLButtonElement | null>>([]);
     const activeProduct = products.find((product) => product.id === activeProductId) ?? products[0];
+    const activeProductIndex = products.indexOf(activeProduct);
+    const previousProduct = products[(activeProductIndex - 1 + products.length) % products.length];
+    const nextProduct = products[(activeProductIndex + 1) % products.length];
 
-    const handleTabKeyDown = (event: KeyboardEvent<HTMLButtonElement>, currentIndex: number) => {
-        let nextIndex: number;
-
-        if (event.key === 'ArrowRight' || event.key === 'ArrowDown') {
-            nextIndex = (currentIndex + 1) % products.length;
-        } else if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') {
-            nextIndex = (currentIndex - 1 + products.length) % products.length;
-        } else if (event.key === 'Home') {
-            nextIndex = 0;
-        } else if (event.key === 'End') {
-            nextIndex = products.length - 1;
-        } else {
-            return;
-        }
-
-        event.preventDefault();
-        const nextProduct = products[nextIndex];
-        setActiveProductId(nextProduct.id);
-        tabRefs.current[nextIndex]?.focus();
+    const selectProductAt = (index: number) => {
+        const normalizedIndex = (index + products.length) % products.length;
+        setActiveProductId(products[normalizedIndex].id);
     };
 
     return (
@@ -79,51 +65,40 @@ export function ProductsSection() {
                 <header className="home-products__intro">
                     <h2 id="produtos-title">Produtos com identidade própria.</h2>
                     <p>
-                        Selecione um produto para entender sua função. O estágio completo e a evolução de cada um ficam
-                        no YAHub.
+                        Cada produto ocupa o próprio palco. Avance no ritmo que quiser para descobrir a função de cada
+                        um e acompanhar sua evolução no YAHub.
                     </p>
                 </header>
 
-                <div className="home-products__selector" role="tablist" aria-label="Produtos da YA LABS">
-                    {products.map((product, index) => {
-                        const isActive = product.id === activeProductId;
-
-                        return (
-                            <button
-                                aria-controls="product-active-panel"
-                                aria-selected={isActive}
-                                className="home-product-tab"
-                                data-theme={product.id}
-                                id={`product-tab-${product.id}`}
-                                key={product.id}
-                                onClick={() => setActiveProductId(product.id)}
-                                onKeyDown={(event) => handleTabKeyDown(event, index)}
-                                ref={(node) => {
-                                    tabRefs.current[index] = node;
-                                }}
-                                role="tab"
-                                tabIndex={isActive ? 0 : -1}
-                                type="button"
-                            >
-                                <span aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
-                                <strong>{product.name}</strong>
-                                <small>{product.role}</small>
-                            </button>
-                        );
-                    })}
-                </div>
-
                 <article
-                    aria-labelledby={`product-tab-${activeProduct.id}`}
+                    aria-labelledby={`product-name-${activeProduct.id}`}
                     className="home-product-stage"
                     data-theme={activeProduct.id}
                     id="product-active-panel"
-                    role="tabpanel"
-                    tabIndex={0}
+                    role="region"
                 >
+                    <div className="home-product-stage__controls" role="group" aria-label="Navegação entre produtos">
+                        <button
+                            aria-label={`Ver produto anterior: ${previousProduct.name}`}
+                            className="home-stage-control home-stage-control--previous"
+                            onClick={() => selectProductAt(activeProductIndex - 1)}
+                            type="button"
+                        >
+                            <span aria-hidden="true">←</span>
+                        </button>
+                        <button
+                            aria-label={`Ver próximo produto: ${nextProduct.name}`}
+                            className="home-stage-control home-stage-control--next"
+                            onClick={() => selectProductAt(activeProductIndex + 1)}
+                            type="button"
+                        >
+                            <span aria-hidden="true">→</span>
+                        </button>
+                    </div>
+
                     <div className="home-product__copy">
                         <span>{activeProduct.role}</span>
-                        <h3>{activeProduct.name}</h3>
+                        <h3 id={`product-name-${activeProduct.id}`}>{activeProduct.name}</h3>
                         <p>{activeProduct.description}</p>
                         <a href="#yahub">
                             acompanhar desenvolvimento
@@ -139,6 +114,10 @@ export function ProductsSection() {
                         <span>[ artefato {activeProduct.name} ]</span>
                         <small>ex.: {activeProduct.artifact}</small>
                     </div>
+
+                    <span className="home-product-stage__counter" aria-label={`Produto ${activeProductIndex + 1} de ${products.length}`}>
+                        {String(activeProductIndex + 1).padStart(2, '0')} / {String(products.length).padStart(2, '0')}
+                    </span>
                 </article>
             </div>
         </section>
