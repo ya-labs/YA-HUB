@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState, type KeyboardEvent } from 'react';
 
 const products = [
     {
@@ -49,6 +49,29 @@ type ProductId = (typeof products)[number]['id'];
 
 export function ProductsSection() {
     const [activeProductId, setActiveProductId] = useState<ProductId>('svnflow');
+    const tabRefs = useRef<Array<HTMLButtonElement | null>>([]);
+    const activeProduct = products.find((product) => product.id === activeProductId) ?? products[0];
+
+    const handleTabKeyDown = (event: KeyboardEvent<HTMLButtonElement>, currentIndex: number) => {
+        let nextIndex: number;
+
+        if (event.key === 'ArrowRight' || event.key === 'ArrowDown') {
+            nextIndex = (currentIndex + 1) % products.length;
+        } else if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') {
+            nextIndex = (currentIndex - 1 + products.length) % products.length;
+        } else if (event.key === 'Home') {
+            nextIndex = 0;
+        } else if (event.key === 'End') {
+            nextIndex = products.length - 1;
+        } else {
+            return;
+        }
+
+        event.preventDefault();
+        const nextProduct = products[nextIndex];
+        setActiveProductId(nextProduct.id);
+        tabRefs.current[nextIndex]?.focus();
+    };
 
     return (
         <section className="home-products" id="produtos" aria-labelledby="produtos-title">
@@ -61,59 +84,62 @@ export function ProductsSection() {
                     </p>
                 </header>
 
-                <ul className="home-products__collection" aria-label="Produtos da YA LABS">
+                <div className="home-products__selector" role="tablist" aria-label="Produtos da YA LABS">
                     {products.map((product, index) => {
                         const isActive = product.id === activeProductId;
-                        const panelId = `product-panel-${product.id}`;
 
                         return (
-                            <li
-                                className="home-product"
-                                data-active={isActive ? 'true' : 'false'}
+                            <button
+                                aria-controls="product-active-panel"
+                                aria-selected={isActive}
+                                className="home-product-tab"
                                 data-theme={product.id}
+                                id={`product-tab-${product.id}`}
                                 key={product.id}
+                                onClick={() => setActiveProductId(product.id)}
+                                onKeyDown={(event) => handleTabKeyDown(event, index)}
+                                ref={(node) => {
+                                    tabRefs.current[index] = node;
+                                }}
+                                role="tab"
+                                tabIndex={isActive ? 0 : -1}
+                                type="button"
                             >
-                                <button
-                                    aria-controls={panelId}
-                                    aria-expanded={isActive}
-                                    className="home-product__trigger"
-                                    id={`product-trigger-${product.id}`}
-                                    onClick={() => setActiveProductId(product.id)}
-                                    type="button"
-                                >
-                                    <span aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
-                                    <strong>{product.name}</strong>
-                                </button>
-
-                                <div
-                                    aria-labelledby={`product-trigger-${product.id}`}
-                                    className="home-product__panel"
-                                    hidden={!isActive}
-                                    id={panelId}
-                                >
-                                    <div className="home-product__copy">
-                                        <span>{product.role}</span>
-                                        <h3>{product.name}</h3>
-                                        <p>{product.description}</p>
-                                        <a href="#yahub">
-                                            acompanhar desenvolvimento
-                                            <span aria-hidden="true"> ↓</span>
-                                        </a>
-                                    </div>
-
-                                    <div
-                                        className="home-artifact-placeholder home-product__artifact"
-                                        role="img"
-                                        aria-label={`Território reservado para o artefato do ${product.name}`}
-                                    >
-                                        <span>[ artefato {product.name} ]</span>
-                                        <small>ex.: {product.artifact}</small>
-                                    </div>
-                                </div>
-                            </li>
+                                <span aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+                                <strong>{product.name}</strong>
+                                <small>{product.role}</small>
+                            </button>
                         );
                     })}
-                </ul>
+                </div>
+
+                <article
+                    aria-labelledby={`product-tab-${activeProduct.id}`}
+                    className="home-product-stage"
+                    data-theme={activeProduct.id}
+                    id="product-active-panel"
+                    role="tabpanel"
+                    tabIndex={0}
+                >
+                    <div className="home-product__copy">
+                        <span>{activeProduct.role}</span>
+                        <h3>{activeProduct.name}</h3>
+                        <p>{activeProduct.description}</p>
+                        <a href="#yahub">
+                            acompanhar desenvolvimento
+                            <span aria-hidden="true"> ↓</span>
+                        </a>
+                    </div>
+
+                    <div
+                        className="home-artifact-placeholder home-product__artifact"
+                        role="img"
+                        aria-label={`Território reservado para o artefato do ${activeProduct.name}`}
+                    >
+                        <span>[ artefato {activeProduct.name} ]</span>
+                        <small>ex.: {activeProduct.artifact}</small>
+                    </div>
+                </article>
             </div>
         </section>
     );

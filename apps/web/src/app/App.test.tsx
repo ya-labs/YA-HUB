@@ -39,7 +39,7 @@ describe('App', () => {
         expect(screen.getByRole('link', { name: 'Produtos' })).toHaveAttribute('href', '#produtos');
         expect(screen.getByRole('list', { name: /áreas de atuação/i })).toBeInTheDocument();
         expect(screen.getByRole('tablist', { name: /módulos do ecossistema ya/i })).toBeInTheDocument();
-        expect(screen.getByRole('list', { name: /produtos da ya labs/i })).toBeInTheDocument();
+        expect(screen.getByRole('tablist', { name: /produtos da ya labs/i })).toBeInTheDocument();
 
         const user = userEvent.setup();
         const yagitTab = screen.getByRole('tab', { name: 'YAGit' });
@@ -48,9 +48,9 @@ describe('App', () => {
         expect(screen.getByRole('heading', { name: 'YAGit' })).toBeInTheDocument();
         expect(screen.getByRole('link', { name: /acompanhar no yahub/i })).toHaveAttribute('href', '#yahub');
 
-        const devLabTrigger = screen.getByRole('button', { name: /devlab/i });
+        const devLabTrigger = screen.getByRole('tab', { name: /devlab/i });
         await user.click(devLabTrigger);
-        expect(devLabTrigger).toHaveAttribute('aria-expanded', 'true');
+        expect(devLabTrigger).toHaveAttribute('aria-selected', 'true');
         expect(screen.getByRole('heading', { name: 'DevLab' })).toBeInTheDocument();
         expect(screen.getByRole('link', { name: /acompanhar desenvolvimento/i })).toHaveAttribute(
             'href',
