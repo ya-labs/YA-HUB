@@ -72,31 +72,29 @@ export function ProductsSection() {
 
                 <article
                     aria-labelledby={`product-name-${activeProduct.id}`}
-                    className="home-product-stage"
+                    className="home-product-gallery"
                     data-theme={activeProduct.id}
                     id="product-active-panel"
                     role="region"
                 >
-                    <div className="home-product-stage__controls" role="group" aria-label="Navegação entre produtos">
-                        <button
-                            aria-label={`Ver produto anterior: ${previousProduct.name}`}
-                            className="home-stage-control home-stage-control--previous"
-                            onClick={() => selectProductAt(activeProductIndex - 1)}
-                            type="button"
-                        >
-                            <span aria-hidden="true">←</span>
-                        </button>
-                        <button
-                            aria-label={`Ver próximo produto: ${nextProduct.name}`}
-                            className="home-stage-control home-stage-control--next"
-                            onClick={() => selectProductAt(activeProductIndex + 1)}
-                            type="button"
-                        >
-                            <span aria-hidden="true">→</span>
-                        </button>
-                    </div>
+                    <span aria-hidden="true" className="home-product-gallery__wordmark">
+                        {activeProduct.name}
+                    </span>
 
-                    <div className="home-product__copy">
+                    <button
+                        aria-label={`Ver produto anterior: ${previousProduct.name}`}
+                        className="home-product-gallery__preview home-product-gallery__preview--previous"
+                        onClick={() => selectProductAt(activeProductIndex - 1)}
+                        type="button"
+                    >
+                        <span aria-hidden="true" className="home-product-gallery__arrow">←</span>
+                        <span className="home-product-gallery__preview-copy">
+                            <small>anterior</small>
+                            <strong>{previousProduct.name}</strong>
+                        </span>
+                    </button>
+
+                    <div className="home-product-gallery__active">
                         <span>{activeProduct.role}</span>
                         <h3 id={`product-name-${activeProduct.id}`}>{activeProduct.name}</h3>
                         <p>{activeProduct.description}</p>
@@ -104,18 +102,31 @@ export function ProductsSection() {
                             acompanhar desenvolvimento
                             <span aria-hidden="true"> ↓</span>
                         </a>
+
+                        <div
+                            className="home-artifact-placeholder home-product-gallery__artifact"
+                            role="img"
+                            aria-label={`Território reservado para o artefato do ${activeProduct.name}`}
+                        >
+                            <span>[ artefato {activeProduct.name} ]</span>
+                            <small>ex.: {activeProduct.artifact}</small>
+                        </div>
                     </div>
 
-                    <div
-                        className="home-artifact-placeholder home-product__artifact"
-                        role="img"
-                        aria-label={`Território reservado para o artefato do ${activeProduct.name}`}
+                    <button
+                        aria-label={`Ver próximo produto: ${nextProduct.name}`}
+                        className="home-product-gallery__preview home-product-gallery__preview--next"
+                        onClick={() => selectProductAt(activeProductIndex + 1)}
+                        type="button"
                     >
-                        <span>[ artefato {activeProduct.name} ]</span>
-                        <small>ex.: {activeProduct.artifact}</small>
-                    </div>
+                        <span className="home-product-gallery__preview-copy">
+                            <small>próximo</small>
+                            <strong>{nextProduct.name}</strong>
+                        </span>
+                        <span aria-hidden="true" className="home-product-gallery__arrow">→</span>
+                    </button>
 
-                    <span className="home-product-stage__counter" aria-label={`Produto ${activeProductIndex + 1} de ${products.length}`}>
+                    <span className="home-product-gallery__counter" aria-label={`Produto ${activeProductIndex + 1} de ${products.length}`}>
                         {String(activeProductIndex + 1).padStart(2, '0')} / {String(products.length).padStart(2, '0')}
                     </span>
                 </article>
