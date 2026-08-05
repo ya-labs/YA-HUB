@@ -21,7 +21,28 @@ public class YaHubDbContext : DbContext
         base.OnModelCreating(modelBuilder);
 
         modelBuilder.Entity<User>().ToTable("users");
-        modelBuilder.Entity<Project>().ToTable("projects");
+        modelBuilder.Entity<Project>()
+            .ToTable("projects")
+            .HasMany(project => project.Members)
+            .WithMany(member => member.Projects)
+            .UsingEntity(
+                "project_members",
+                right => right
+                    .HasOne(typeof(Member))
+                    .WithMany()
+                    .HasForeignKey("member_id")
+                    .OnDelete(DeleteBehavior.Cascade),
+                left => left
+                    .HasOne(typeof(Project))
+                    .WithMany()
+                    .HasForeignKey("project_id")
+                    .OnDelete(DeleteBehavior.Cascade),
+                join =>
+                {
+                    join.ToTable("project_members");
+                    join.HasKey("project_id", "member_id");
+                });
+
         modelBuilder.Entity<Member>().ToTable("members");
     }
 }

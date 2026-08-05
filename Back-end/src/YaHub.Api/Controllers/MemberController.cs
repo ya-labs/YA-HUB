@@ -39,6 +39,17 @@ public class MemberController : ControllerBase
         return Ok(result);
     }
 
+    [HttpGet("{id:guid}/projects")]
+    public async Task<IActionResult> ReadProjects(Guid id)
+    {
+        var result = await _memberService.ReadProjectsAsync(id);
+
+        if (!result.IsSuccess)
+            return BadRequest(result);
+
+        return Ok(result);
+    }
+
     [HttpPut("{id:guid}")]
     public async Task<IActionResult> Update(Guid id, [FromBody] MemberRequest memberRequest)
     {

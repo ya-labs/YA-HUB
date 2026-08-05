@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using YaHub.Application.Interfaces.Member;
 using YaHub.Domain.Members;
+using YaHub.Domain.Projects;
 using YaHub.Infrastructure.Persistence;
 
 namespace YaHub.Infrastructure.Data;
@@ -31,6 +32,18 @@ public sealed class MemberRepository : IMemberRepository
     {
         return await _context.Members
             .FirstOrDefaultAsync(member => member.Id == id);
+    }
+
+    public async Task<List<Project>> ReadProjectsAsync(Guid memberId)
+    {
+        var member = await _context.Members
+            .AsNoTracking()
+            .Include(member => member.Projects)
+            .FirstOrDefaultAsync(member => member.Id == memberId);
+
+        return member?.Projects
+            .OrderBy(project => project.Name)
+            .ToList() ?? [];
     }
 
     public async Task UpdateAsync(Member member)

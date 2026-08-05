@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using YaHub.Application.Interfaces.Project;
+using YaHub.Domain.Members;
 using YaHub.Infrastructure.Persistence;
 using DomainProject = YaHub.Domain.Projects.Project;
 
@@ -33,6 +34,25 @@ public sealed class ProjectRepository : IProjectRepository
             .FirstOrDefaultAsync(project => project.Id == id);
     }
 
+    public async Task<DomainProject?> FindByIdWithMembersAsync(Guid id)
+    {
+        return await _context.Projects
+            .Include(project => project.Members)
+            .FirstOrDefaultAsync(project => project.Id == id);
+    }
+
+    public async Task<List<Member>> ReadMembersAsync(Guid projectId)
+    {
+        var project = await _context.Projects
+            .AsNoTracking()
+            .Include(project => project.Members)
+            .FirstOrDefaultAsync(project => project.Id == projectId);
+
+        return project?.Members
+            .OrderBy(member => member.Name)
+            .ToList() ?? [];
+    }
+
     public async Task UpdateAsync(DomainProject project)
     {
         _context.Projects.Update(project);
@@ -42,6 +62,11 @@ public sealed class ProjectRepository : IProjectRepository
     public async Task DeleteAsync(DomainProject project)
     {
         _context.Projects.Remove(project);
+        await _context.SaveChangesAsync();
+    }
+
+    public async Task SaveChangesAsync()
+    {
         await _context.SaveChangesAsync();
     }
 }

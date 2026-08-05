@@ -71,10 +71,14 @@ GET /api/members
 POST /api/members
 PUT /api/members/{id}
 DELETE /api/members/{id}
+GET /api/members/{id}/projects
 GET /api/projects
 POST /api/projects
 PUT /api/projects/{id}
 DELETE /api/projects/{id}
+GET /api/projects/{id}/members
+POST /api/projects/{projectId}/members/{memberId}
+DELETE /api/projects/{projectId}/members/{memberId}
 ```
 
 Todos os endpoints acima, exceto `POST /api/login`, exigem token JWT no header:
@@ -364,6 +368,29 @@ Resposta atual:
   }
 }
 ```
+
+## Vínculo atual entre projetos e membros
+
+A implementação atual permite vincular membros a projetos e consultar a relação dos dois lados.
+
+Endpoints implementados:
+
+```text
+GET /api/projects/{id}/members
+POST /api/projects/{projectId}/members/{memberId}
+DELETE /api/projects/{projectId}/members/{memberId}
+GET /api/members/{id}/projects
+```
+
+Todos exigem autenticação JWT.
+
+Regras atuais:
+
+- o projeto deve existir;
+- o membro deve existir;
+- o mesmo membro não pode ser vinculado duas vezes ao mesmo projeto;
+- só é possível remover vínculo existente;
+- a relação é persistida na tabela `project_members`.
 
 ## Endpoints administrativos de projetos
 

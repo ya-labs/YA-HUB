@@ -1,6 +1,7 @@
 using Microsoft.Extensions.Logging;
 using YaHub.Application.Common;
 using YaHub.Application.DTOs.Member;
+using YaHub.Application.DTOs.Project;
 using YaHub.Application.Interfaces.Mappers;
 using YaHub.Application.Interfaces.Member;
 
@@ -10,15 +11,18 @@ public sealed class MemberService : IMemberService
 {
     private readonly IMemberRepository _repository;
     private readonly IMemberMapper _mapper;
+    private readonly IProjectMapper _projectMapper;
     private readonly ILogger<MemberService> _logger;
 
     public MemberService(
         IMemberRepository repository,
         IMemberMapper mapper,
+        IProjectMapper projectMapper,
         ILogger<MemberService> logger)
     {
         _repository = repository;
         _mapper = mapper;
+        _projectMapper = projectMapper;
         _logger = logger;
     }
 
@@ -40,6 +44,18 @@ public sealed class MemberService : IMemberService
         var members = await _repository.ReadAllAsync();
 
         return Result<List<MemberResponse>>.Ok(_mapper.ToResponseList(members));
+    }
+
+    public async Task<Result<List<ProjectResponse>>> ReadProjectsAsync(Guid memberId)
+    {
+        var member = await _repository.FindByIdAsync(memberId);
+
+        if (member == null)
+            return Result<List<ProjectResponse>>.Fail($"Member with id {memberId} not found.");
+
+        var projects = await _repository.ReadProjectsAsync(memberId);
+
+        return Result<List<ProjectResponse>>.Ok(_projectMapper.ToResponseList(projects));
     }
 
     public async Task<Result<MemberResponse>> UpdateAsync(Guid id, MemberRequest memberRequest)
