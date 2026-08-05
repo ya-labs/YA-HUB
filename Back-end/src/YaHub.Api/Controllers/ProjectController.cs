@@ -39,6 +39,39 @@ public class ProjectController : ControllerBase
         return Ok(result);
     }
 
+    [HttpGet("{id:guid}/members")]
+    public async Task<IActionResult> ReadMembers(Guid id)
+    {
+        var result = await _projectService.ReadMembersAsync(id);
+
+        if (!result.IsSuccess)
+            return BadRequest(result);
+
+        return Ok(result);
+    }
+
+    [HttpPost("{projectId:guid}/members/{memberId:guid}")]
+    public async Task<IActionResult> AddMember(Guid projectId, Guid memberId)
+    {
+        var result = await _projectService.AddMemberAsync(projectId, memberId);
+
+        if (!result.IsSuccess)
+            return BadRequest(result);
+
+        return Ok(result);
+    }
+
+    [HttpDelete("{projectId:guid}/members/{memberId:guid}")]
+    public async Task<IActionResult> RemoveMember(Guid projectId, Guid memberId)
+    {
+        var result = await _projectService.RemoveMemberAsync(projectId, memberId);
+
+        if (!result.IsSuccess)
+            return BadRequest(result);
+
+        return Ok(result);
+    }
+
     [HttpPut("{id:guid}")]
     public async Task<IActionResult> Update(Guid id, [FromBody] ProjectRequest projectRequest)
     {
